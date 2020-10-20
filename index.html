@@ -40,15 +40,17 @@
     {
         this.add.image(400, 300, 'sky');
 
-        var particles = this.add.particles('red');
+        let particles = this.add.particles('red');
 
-        var emitter = particles.createEmitter({
+        let emitter = particles.createEmitter({
             speed: 100,
             scale: { start: 0.05, end: 0 },
             blendMode: 'SCREEN'
         });
 
-        var ball = this.physics.add.image(400, 100, 'saw').setScale(0.3);
+        let ball = this.physics.add.image(400, 100, 'saw')
+            .setScale(0.3)
+            .setAngularVelocity(420);
 
         ball.setVelocity(100, 200);
         ball.setBounce(1, 1);
@@ -56,7 +58,9 @@
 
         emitter.startFollow(ball);
 
-        paddle = this.physics.add.image(400, 500, 'bluebar').setScale(3);
+         paddle = this.physics.add.image(400, 500, 'bluebar')
+            .setScale(3)
+            .setImmovable(true);
         //paddle.body = this.physics.StaticBody();
         paddle.setBounce(0.2);
         paddle.setCollideWorldBounds(true);
@@ -68,7 +72,7 @@
 
     function update ()
     {
-        var paddleSpeed = 160;
+        let paddleSpeed = 160;
         if (cursors.left.isDown)
         {
             paddle.setVelocityX(-paddleSpeed);
