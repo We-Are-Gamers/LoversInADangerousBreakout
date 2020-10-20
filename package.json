@@ -3,15 +3,16 @@
   "version": "0.0.1",
   "description": "Lovers In A Dangerous Breakout is a breakout derivative set is space, with block defenses",
   "main": "index.js",
-  "dependencies": {
-    "phaser": "^3.24.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "http-server": "^0.12.3",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx http-server"
+    "serve": "npx http-server",
+    "build": "npx webpack"
   },
   "repository": {
     "type": "git",
