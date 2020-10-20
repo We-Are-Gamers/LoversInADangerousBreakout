@@ -1,0 +1,23 @@
+{
+  "name": "dangerousbreakout",
+  "version": "0.0.1",
+  "description": "Lovers In A Dangerous Breakout is a breakout derivative set is space, with block defenses",
+  "main": "index.js",
+  "dependencies": {
+    "phaser": "^3.24.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burtonwilliamt/LoversInADangerousBreakout.git"
+  },
+  "author": "",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/burtonwilliamt/LoversInADangerousBreakout/issues"
+  },
+  "homepage": "https://github.com/burtonwilliamt/LoversInADangerousBreakout#readme"
+}
