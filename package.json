@@ -14,8 +14,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx webpack --watch & npx http-server",
-    "serve": "npx http-server",
+    "watch": "npx webpack --watch",
+    "serve": "npx http-server -c-1",
     "build": "npx webpack"
   },
   "repository": {
