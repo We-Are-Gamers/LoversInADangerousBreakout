@@ -31,6 +31,7 @@ function preload ()
     this.load.image('red', 'assets/particles/red.png');
     this.load.image('bluebar', 'assets/sprites/bluebar.png');
     this.load.image('saw', 'assets/sprites/saw.png');
+    this.load.image('sonic', 'assets/sprites/sonic.png');
 }
 
 function create ()
@@ -61,6 +62,22 @@ function create ()
     //paddle.body = this.physics.StaticBody();
     paddle.setBounce(0.2);
     paddle.setCollideWorldBounds(true);
+    
+    let rooms = [];
+    for(let i=0; i<5; i++) {
+        let roomRow = [];
+        for(let j=0; j<10; j++) {
+            room = this.physics.add.image(75 + (70 * j), 100 + (50 * i), 'sonic');
+            room.setBounce(0.2);
+            room.setImmovable(true);
+            room.onCollide(true);
+            
+            this.physics.add.collider(ball, room);
+
+            roomRow[j] = room;
+        }
+        rooms[i] = roomRow;
+    }
 
     cursors = this.input.keyboard.createCursorKeys();
 
