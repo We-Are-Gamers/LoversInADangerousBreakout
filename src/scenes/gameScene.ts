@@ -1,5 +1,6 @@
 import 'phaser';
 import { GameAssets } from '../assets';
+import { Room } from '../objects/room';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -57,13 +58,12 @@ export class GameScene extends Phaser.Scene{
         for(let i=0; i<5; i++) {
             let roomRow = [];
             for(let j=0; j<10; j++) {
-                let room = this.physics.add.image(75 + (70 * j), 100 + (50 * i), GameAssets.sonic);
-                room.setBounce(0.2);
-                room.setImmovable(true);
-                //room.onCollide(true);
+                let room = new Room(75 + (70 * j), 100 + (50 * i), GameAssets.sonic);
+                room.setGameObject(this.physics.add.image(75 + (70 * j), 100 + (50 * i), GameAssets.sonic)
+                    .setBounce(0.2)
+                    .setImmovable(true));
                 
-                this.physics.add.collider(ball, room);
-
+                var c = this.physics.add.collider(ball, room.gameObject, () => room.onBallCollide());
                 roomRow[j] = room;
             }
             rooms[i] = roomRow;
