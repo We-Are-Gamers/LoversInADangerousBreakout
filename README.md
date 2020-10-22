@@ -1,2 +1,2 @@
 # LoversInADangerousBreakout
-Lovers In A Dangerous Breakout is a breakout derivative set is space, with block defenses
+Lovers In A Dangerous Breakout is a breakout derivative set in space, with block defenses
